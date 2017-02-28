@@ -6,9 +6,6 @@
 **/.dist
 **/.sass-cache
 
-**/.settings
-**/.metadata
 **/Servers
 **/RemoteSystemsTempFiles
 
-**/target/*
