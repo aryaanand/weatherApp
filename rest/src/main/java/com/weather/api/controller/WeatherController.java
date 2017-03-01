@@ -15,7 +15,6 @@ import io.swagger.annotations.ApiResponses;
 import java.util.List;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
-
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -115,7 +114,7 @@ public class WeatherController {
 			@ApiResponse(code = 500, message = "Internal Server Error"), })
 	public Weather findHourlyAverageWeatherByCity(
 			@PathVariable("city") String city) {
-		return findHourlyAverageWeatherByCity(city);
+		return service.findHourlyAverageWeatherByCity(city);
 	}
 
 	@RequestMapping(method = RequestMethod.GET, value = URI.DAILY_AVERAGE)
@@ -124,6 +123,6 @@ public class WeatherController {
 			@ApiResponse(code = 500, message = "Internal Server Error"), })
 	public Weather findDailyAverageWeatherByCity(
 			@PathVariable("city") String city) {
-		return findDailyAverageWeatherByCity(city);
+		return service.findDailyAverageWeatherByCity(city);
 	}
 }

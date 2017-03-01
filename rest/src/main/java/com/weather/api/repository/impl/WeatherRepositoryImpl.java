@@ -1,17 +1,22 @@
 package com.weather.api.repository.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.data.mongodb.core.aggregation.Aggregation;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Repository;
 
+import com.mongodb.AggregationOutput;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DBCollection;
 import com.mongodb.DBCursor;
+import com.mongodb.DBObject;
 import com.weather.api.entity.Weather;
 import com.weather.api.repository.WeatherRepository;
 
@@ -30,8 +35,7 @@ public class WeatherRepositoryImpl implements WeatherRepository {
 	@Override
 	public Weather findOne(String id) {
 		Query searchQuery = new Query(Criteria.where("id").is(id));
-		Weather wthr = mongoTemplate.findOne(searchQuery, Weather.class);
-		return wthr;
+		return mongoTemplate.findOne(searchQuery, Weather.class);
 	}
 
 	@Override
@@ -91,7 +95,30 @@ public class WeatherRepositoryImpl implements WeatherRepository {
 
 	@Override
 	public Weather findHourlyAverageWeatherByCity(String city) {
-		// TODO Auto-generated method stub
+//		Date value = null;
+//		DBObject query = new BasicDBObject("$match", new BasicDBObject("city", city));
+//		DBObject group = new BasicDBObject("$group", new BasicDBObject("_id" , "$timestamp"));
+//		
+//		
+//		DBCollection coll = mongoTemplate.getCollection("weather");
+//		DBObject addToSet = new BasicDBObject("$addToSet", new BasicDBObject());
+//		//List<DBObject> dbList = coll.find(query).toArray();
+//	//	DBObject groupFields = new BasicDBObject("_id" , "$timestamp.$hour");
+////		group.put("average", new BasicDBObject("$avg",1));
+//		
+//		AggregationOutput aggr = coll.aggregate(query,group);
+//	    
+//	    Iterator<DBObject> results = aggr.results().iterator();
+//
+//
+//	   while(results.hasNext()) {
+//	     DBObject obj = results.next();
+//
+//	     System.out.println(obj.get("_id")+" "+obj.get("value"));
+//
+//	  }
+
+		
 		return null;
 	}
 

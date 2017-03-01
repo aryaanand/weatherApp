@@ -2,6 +2,7 @@ package com.weather.api.service.impl;
 
 import java.util.List;
 
+
 import org.springframework.stereotype.Service;
 
 import com.weather.api.entity.Weather;

@@ -1,6 +1,7 @@
 package com.weather.api.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.weather.api.entity.Weather;
 
